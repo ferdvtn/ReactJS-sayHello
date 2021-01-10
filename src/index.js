@@ -1,10 +1,15 @@
+// ---- libraries ----
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
+
+// ---- pages ----
 import reportWebVitals from './reportWebVitals';
 import Home from "./container/Home/Home";
 
+// ---- style ----
+import './index.css';
+
+// ---- render dom ----
 ReactDOM.render(
   <React.StrictMode>
     <Home />

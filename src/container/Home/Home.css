@@ -2,3 +2,27 @@
     margin: 0;
     padding: 0;
 }
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: rgb(114, 152, 250);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+nav a {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: salmon;
+    color: #fff;
+    text-decoration: none;
+    transition: .2s;
+}
+
+nav a:hover {
+    background-color: rgb(190, 96, 86);
+    color: rgb(216, 216, 216);
+}

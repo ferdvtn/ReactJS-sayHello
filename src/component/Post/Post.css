@@ -31,19 +31,35 @@
     font-weight: lighter;
 }
 
-.btn-danger {
+.btn {
+    background-color: white;
     padding: 6px 12px;
-    background-color: rgb(221, 62, 62);
-    color: white;
+    margin-right: 10px;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
-    outline: auto;
-    transition: .3s;
+    outline: unset;
+    transition: .2s;
+}
+
+.btn-danger {
+    border: none;
+    color: rgb(221, 62, 62);
 }
 
 .btn-danger:hover {
     cursor: pointer;
-    background-color: rgb(162, 41, 41);
-    color: #eaeaea;
+    color: #fff;
+    background-color: rgb(221, 62, 62);
+}
+
+.btn-success {
+    border: none;
+    color: rgb(62, 221, 62);
+}
+
+.btn-success:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(62, 221, 62);
 }
