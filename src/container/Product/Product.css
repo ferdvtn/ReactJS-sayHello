@@ -1,0 +1,9 @@
+.header {
+    margin: 20px;
+    display: block;
+    text-align: center;
+}
+
+span.num {
+    margin: auto 10px;
+}
