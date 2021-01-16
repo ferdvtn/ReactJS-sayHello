@@ -5,14 +5,22 @@ import ReactDOM from 'react-dom';
 // ---- pages ----
 import reportWebVitals from './reportWebVitals';
 import Home from "./container/Home/Home";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './redux/reducer/rootReducer';
 
 // ---- style ----
 import './index.css';
 
+// store
+const myStore = createStore(rootReducer);
+
 // ---- render dom ----
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Provider store={myStore}>
+      <Home />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

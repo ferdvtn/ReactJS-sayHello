@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import { connect } from 'react-redux';
 
 class LifeCycleComp extends Component {
 
@@ -7,11 +8,9 @@ class LifeCycleComp extends Component {
         this.state = {
             number: 1
         }
-        console.log('constructor');
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log('getDerivedStateFromProps');
         return null;
     }
 
@@ -21,21 +20,12 @@ class LifeCycleComp extends Component {
         //         number: 5
         //     })
         // }, 3000);
-        console.log('componentDidMount');
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.group('shouldComponentUpdate');
-        // console.log('nextProps', nextProps);
-        console.log('nextState', nextState);
-        console.log('thisState', this.state);
-        console.groupEnd();
 
         const max = 3;
         if (nextState.number > max) {
-            // this.setState({
-            //     number: max
-            // })
             return false;
         } else {
             return true;
@@ -44,19 +34,13 @@ class LifeCycleComp extends Component {
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState){
-        console.log('getSnapshotBeforeUpdate');
-        // console.log(prevProps);
-        // console.log(prevState);
         return 'this is snapshot!';
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('componentDidUpdate');
-        console.log(snapshot);
     }
 
     componentWillUnmount() {
-        console.log('componentWillUnmount');
     }
 
     incNumber = () => {
@@ -66,11 +50,20 @@ class LifeCycleComp extends Component {
     }
 
     render() {
-        console.log('render');
         return (
-            <button className='btn' onClick={this.incNumber}>Button Comp {this.state.number}</button>
+            <Fragment>
+                <button className='btn' onClick={this.incNumber}>Button Comp {this.state.number}</button>
+                <hr/>
+                <h3>Total Order : {this.props.order}</h3>
+            </Fragment>
         )
     }
 }
 
-export default LifeCycleComp;
+const mapStateToProps = state => {
+    return {
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps)(LifeCycleComp);

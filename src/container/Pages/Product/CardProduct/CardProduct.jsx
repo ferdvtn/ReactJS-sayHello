@@ -1,36 +1,14 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
+import Counter from './Counter';
 import './CardProduct.css'
 
 class CardProduct extends Component {
-
-    state = {
-        number : 0
-    }
-
-    handlerPlus = () => {
-        this.setState({
-            number: this.state.number + 1
-        }, () => {
-            this.props.onNumChange(this.state.number)
-        })
-    }
-
-    handlerMinus = () => {
-        if (this.state.number > 0) {
-            this.setState({
-                number: this.state.number - 1,
-            }, () => {
-                this.props.onNumChange(this.state.number)
-            })
-        }
-    }
-
     render () {
         return (
-            <Fragment>
-                <button className="btn-minus" onClick={ this.handlerMinus }>-</button>
-                <button className="btn-plus" onClick={ this.handlerPlus }>+</button>
-            </Fragment>
+            <div className="card-product-wrapper">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur recusandae numquam nisi optio corrupti iure iusto quibusdam quae possimus quo delectus corporis quas enim, iste nemo sed animi vel repellendus?</p>
+                <Counter />
+            </div>
         )
     }
 }

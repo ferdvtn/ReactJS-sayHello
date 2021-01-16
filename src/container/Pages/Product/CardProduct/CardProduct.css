@@ -1,3 +1,11 @@
 button {
-    margin: auto 15px;
+    margin: 20px 15px;
+    padding: 5px 10px;
+}
+
+#e-count { 
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    text-align: center;
 }

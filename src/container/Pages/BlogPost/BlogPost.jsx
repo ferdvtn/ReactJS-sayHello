@@ -91,6 +91,10 @@ class BlogPost extends Component {
         }
     }
 
+    handleDetail = (id) => {
+        this.props.history.push(`/detail-post/${id}`);
+    }
+
     shouldComponentUpdate () {
         // console.log('shouldComponentUpdate', true);
         // console.log(this.state.blogPostData)
@@ -134,8 +138,10 @@ class BlogPost extends Component {
                                 <Post 
                                 key={data.id}
                                 data={data}
-                                remove={(id) => this.handleRemove(id)} 
-                                edit={(data) => this.handleEdit(data)} />
+                                remove={this.handleRemove} 
+                                edit={this.handleEdit} 
+                                goDetail={this.handleDetail}
+                                 />
                             )
                         })
                     }

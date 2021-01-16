@@ -5,7 +5,7 @@ const Post = (props) => {
     return (
         <div className="post">
             <div className="post-content">
-                <p className="post-title">{ props.data.title }</p>
+                <p className="post-title" onClick={() => props.goDetail(props.data.id)}>{ props.data.title }</p>
                 <p className="post-desc">{ props.data.body }</p>
                 <hr style={ {margin: "10px auto"} }/>
                 <button className="btn btn-success" onClick={() => props.edit(props.data)}>edit</button>

@@ -7,6 +7,7 @@ import YouTube from '../Pages/Youtube/Youtube';
 import Product from '../Pages/Product/Product';
 import LifeCycleComp from '../Pages/LifeCycleComp/LifeCycleComp';
 import BlogPost from '../Pages/BlogPost/BlogPost';
+import PostDetail from "../Pages/BlogPost/PostDetail/PostDetail";
 
 // ---- style ----
 import './Home.css';
@@ -26,6 +27,7 @@ class Home extends Component {
 
                     <Switch>
                         <Route path='/' exact component={BlogPost} />
+                        <Route path='/detail-post/:postId' component={PostDetail} />
                         <Route path='/lifecycle' component={LifeCycleComp} />
                         <Route path='/product' component={Product} />
                         <Route path='/youtube' component={YouTube} />

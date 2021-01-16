@@ -1,0 +1,20 @@
+.detail-wrapper {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#detail-title {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+#detail-body {
+    color: rgb(31, 31, 31);
+}
+
+.detail-wrapper button {
+    margin: 20px auto 10px;
+    padding: 5px 10px;
+}
